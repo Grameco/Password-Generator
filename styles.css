@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(110deg, rgb(62, 77, 116), rgb(69, 123, 180), rgb(31, 151, 164));
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(173, 229, 235);
+}
+
+.display {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    background-color: rgb(19 11 39);
+    border-radius: 1rem;
+    padding-top: 0.35rem;
+    margin: 1rem, 0;
+    border-bottom: 0.35rem solid rgb(226, 226, 108);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#final-password {
+    letter-spacing: 1px;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 1.15rem 1rem;
+    color: rgb(128, 133, 53);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+}
+
+
+#final-password::placeholder {
+    font-size: 1.5rem;
+    top: 50%;
+    color: rgb(128, 133, 53);
+}
+
+.display button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.display button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    top: 33%;
+    box-shadow: rgba(39, 192, 226, 0.671) 0px 8px 24px;
+}
+
+.copy-message {
+    position: absolute;
+    background-color: rgb(61, 87, 181);
+    color: rgb(225, 239, 23);
+    font-size: 1.2rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.copy-message.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card {
+    width: 450px;
+    background-color: rgb(19 11 39);
+    border-radius: 1rem;
+    padding: 0.35rem;
+    margin: 1rem, 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 1px;
+    padding: 1.15rem 1rem;
+    line-height: 30px;
+    padding-right: 1.35rem;
+
+}
+
+.length {
+    color: rgb(200, 168, 235);
+    font-size: 1.3rem;
+}
+
+.length-value {
+    color: rgb(200, 168, 235);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.slider {
+    width: 400px;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox1 {
+    font-family: monospace;
+    margin: 1rem, 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    padding: 1rem 0 0.5rem 1rem;
+}
+
+.checkbox1:last-of-type {
+    margin-bottom: 1.75rem;
+}
+
+.checkbox1 input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid cyan;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.checkbox1 input:checked {
+    background-color: cyan;
+}
+
+.checkbox1 input:checked::before {
+    position: absolute;
+    content: '✔';
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3.5px;
+}
+
+.checkbox1 label {
+    color: var(--pl-white);
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.strength {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 1px;
+    padding: 1.15rem 1rem;
+    line-height: 30px;
+    padding-right: 1.35rem;
+}
+
+.strength h3 {
+    color: white;
+}
+
+.color {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    transition: all 250ms ease-in-out;
+}
+
+.generate {
+    width: 90%;
+    padding: 1rem 0;
+    background-color: rgb(37, 18, 86);
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid rgb(226, 226, 108);
+    letter-spacing: 1px;
+    color: yellow;
+    margin: 1rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.geneerate:hover {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 380px) {
+    .wrapper {
+        gap: 1rem;
+        height: 110vh;
+    }
+  
+    h1 {
+        margin-top: -3rem;
+        font-size: 1.4rem;
+    }
+  
+    .display {
+      width: 80%;
+      height: 50px;
+      padding: 0.75rem;
+    }
+
+    #final-password {
+      font-size: 1rem;  
+      top: 50%;
+      padding: 0.3rem 0.3rem 0rem 0.3rem;
+    }
+
+    #final-password::placeholder {
+        font-size: 1rem;
+        top: 50%;
+        color: rgb(128, 133, 53);
+    }
+  
+    .display button {
+      right: 0.65rem;
+    }
+
+    .card {
+        width: 330px;
+        padding: 0.35rem;
+        margin: 1rem, 0;
+    }
+    
+    .slider {
+        width: 290px;
+        margin: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .checkbox1 {
+      padding: 0.75rem 0 0.25rem 1rem; 
+    }
+  
+    .generate {
+      font-size: 1rem; 
+      padding: 0.75rem 0;
+    }
+  }
+  
